@@ -1,0 +1,163 @@
+{
+	"info": {
+		"_postman_id": "4bf29131-6e91-4807-8dff-d8e2f065fa3f",
+		"name": "Mock_API_Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30300258"
+	},
+	"item": [
+		{
+			"name": "GetAllCourses",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/getapitestingcourses",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"getapitestingcourses"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://69a91e11-6006-4863-8f37-d94c51a7d875.mock.pstmn.io/getapitestingcourses",
+							"protocol": "https",
+							"host": [
+								"69a91e11-6006-4863-8f37-d94c51a7d875",
+								"mock",
+								"pstmn",
+								"io"
+							],
+							"path": [
+								"getapitestingcourses"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "    \"data\": [\n        {\n            \"course\": \"Postman\",\n            \"price\": 150,\n            \"category\": \"Javascript\"\n        },\n        {\n            \"course\": \"SoapUI\",\n            \"price\": 25,\n            \"category\": \"Groovy\"\n        },\n        {\n            \"course\": \"RestAssured\",\n            \"price\": 100,\n            \"category\": \"Java\"\n        },\n        {\n            \"course\": \"RestAssured\",\n            \"price\": 100,\n            \"category\": \"Java\"\n        }\n    ]\n}\n"
+				}
+			]
+		},
+		{
+			"name": "QueryCourse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/getcoursedetails?name=Postman",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"getcoursedetails"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Postman"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PostmanCourse",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"postman\",\r\n\"students\": 12342\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/getcoursedetails?name=Postman",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getcoursedetails"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Postman"
+								}
+							]
+						}
+					},
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"name\": \"postman\",\r\n    \"category\": \"javascript\",\r\n    \"content\": \"videos\",\r\n    \"length\": \"15hours\",\r\n    \"students\": 12342\r\n}\r\n"
+				},
+				{
+					"name": "RestAssuredCourse",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/getcoursedetails?name=RestAssured",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"getcoursedetails"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "RestAssured"
+								}
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": "{\r\n    \"name\": \"RestAssured\",\r\n    \"category\": \"java\",\r\n    \"content\": \"videos\",\r\n    \"length\": \"12hours\",\r\n    \"students\": 11000\r\n}\r\n"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://69a91e11-6006-4863-8f37-d94c51a7d875.mock.pstmn.io"
+		}
+	]
+}
